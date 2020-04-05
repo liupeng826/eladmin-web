@@ -15,8 +15,7 @@
     "new": "plop"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
@@ -59,8 +58,12 @@
     "vue-router": "3.0.2",
     "vue-splitpane": "1.0.4",
     "vuex": "3.1.0",
+    "vue-i18n": "^8.11.2",
     "wangeditor": ">=3.0.0",
-    "xlsx": "^0.11.16"
+    "xlsx": "^0.11.16",
+    "bpmn-js": "^3.4.1",
+    "bpmn-js-properties-panel": "^0.30.0",
+    "camunda-bpmn-moddle": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",

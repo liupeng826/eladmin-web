@@ -5,6 +5,8 @@ import Cookies from 'js-cookie'
 import 'normalize.css/normalize.css'
 
 import Element from 'element-ui'
+// internationalization
+import i18n from '@/lang'
 //
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
@@ -34,7 +36,8 @@ Vue.use(mavonEditor)
 Vue.use(permission)
 Vue.use(dict)
 Vue.use(Element, {
-  size: Cookies.get('size') || 'small' // set element-ui default size
+  size: Cookies.get('size') || 'small', // set element-ui default size
+  i18n: (key, value) => i18n.t(key, value)
 })
 
 Vue.config.productionTip = false
@@ -43,5 +46,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   render: h => h(App)
 })
