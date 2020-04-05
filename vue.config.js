@@ -62,6 +62,10 @@ module.exports = {
         '@': resolve('src'),
         '@crud': resolve('src/components/Crud')
       }
+    },
+    externals: {
+      monaco: 'monaco',
+      beautifier: 'beautifier'
     }
   },
   chainWebpack(config) {
