@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import load from '@/utils/loadScript'
+import '@/assets/icons'
 
 const $previewApp = document.getElementById('previewApp')
 const childAttrs = {

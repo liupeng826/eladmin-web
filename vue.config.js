@@ -2,6 +2,17 @@
 const path = require('path')
 const defaultSettings = require('./src/settings.js')
 
+const minify = process.env.NODE_ENV === 'development' ? false : {
+  // collapseWhitespace: true,
+  // removeComments: true,
+  // removeRedundantAttributes: true,
+  // removeScriptTypeAttributes: true,
+  // removeStyleLinkTypeAttributes: true,
+  // useShortDoctype: true,
+  minifyCSS: true,
+  minifyJS: true
+}
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -16,6 +27,22 @@ module.exports = {
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      chunks: ['chunk-vendors', 'chunk-common', 'index'],
+      minify
+    },
+    preview: {
+      entry: 'src/views/tools/formGenerator/preview/main.js',
+      template: 'public/preview.html',
+      filename: 'preview.html',
+      chunks: ['chunk-vendors', 'chunk-common', 'preview'],
+      minify
+    }
+  },
   devServer: {
     port: port,
     open: true,
